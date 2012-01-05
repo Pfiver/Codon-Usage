@@ -33,6 +33,7 @@ def main():
 
 		print counting_forward_table.counts
 
+
 class LookupCountingForwardTable(dict):
 
 	counts = {}
