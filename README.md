@@ -9,10 +9,13 @@ Standard Methods
 Various research papers published during the past three decades are focusing on this particular problem.
 One paper by Frank Wright that seems to be widely cited and was published on the 1st of March 1990 in
 Volume 87, Issue 1, Pages 23–29 of Elsevier's "Gene" Journal is titled "The ‘effective number of codons’
-used in a gene". It is available at <http://dx.doi.org/10.1016/0378-1119(90)90491-9> (and, although illegally,
-at <http://crocodoc.com/2N8JTIc> -- choose "Download original" there).
+used in a gene". It is available at <http://dx.doi.org/10.1016/0378-1119(90)90491-9>
+<!-- or <http://crocodoc.com/2N8JTIc> -->.
 
 ### Student's $t$-test
+
+The Student's $t$-test can be used to test whether the mean of a normally distributed
+population has a value specified in a null hypothesis.
 
 ### $\chi^2$-test
 
@@ -47,25 +50,20 @@ We will (a) carry out $t$- and $\chi^2$-tests for the usage of each codon in res
 
 #### Null-Hypothesis ($H_0$):
 
-We calculate the hypotetical probability of the codon usage for the amino acids of
-all genes by assuming the following null hypothesis:
+Assuming there are $n$ codons coding for a given amino acid $AA$, then the probability
+for any of those codons $C_x$ to be actually used (i.e. the "mean value" of this codon,
+if "codon used" is 1 and "codon not used" is 0), would be:
 
-Assuming there are $n$ codons coding for a given amino acid $AS$,
-then the probability for any of those codons $C_x$ to be actually used, would be:
-
-$P(C_x, AS) = \frac{1}{n}$
-
-The opposite Probability, that the codon $C_x$ would *not* be used, would be:
-
-$P(\overline{C_x}, AS) = 1 - \frac{1}{n}$
+$$P(C_x, AA) = \mu_x = \frac{1}{n}$$
 
 #### Test
 
-We examine the actual codon usage in both organisms. For a given amino-acid,
-e.g. Glycin: CGA, GGC, GGG, GGT, we examine if codon-usage satisfies the
+We examine the actual codon usage in *E. Coli* and *S. solfataricus*. For a given
+amino-acid, e.g. Glycin: CGA, GGC, GGG, GGT, we examine if codon-usage satisfies the
 null-hypothesis.
 
-e.g. $H_0$: $P(C_x, Glycin) = \frac{1}{4}$; $P(\overline{C_x}, Glycin) = \frac{3}{4}$
+e.g. $$P(C_x, Glycin) = \mu_x = \frac{1}{4}$$
 
-Assuming the null-hypothesis, we can now calculate the probability that out
-of $m$ identical amino-acids $n$ _or more_ are coded
+To test this, assuming the null-hypothesis, we can calculate the probability that out
+of $m$ identical amino-acids $\mu - \frac{s}{2}$ to $\mu + \frac{s}{2}$ are coded
+using a specific aa. $s$ is the interval for our chosen confidence level of 95%.
